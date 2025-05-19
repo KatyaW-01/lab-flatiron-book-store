@@ -48,3 +48,25 @@ const bookStore = {
 const bookStoreTitle = document.querySelector("#header")
 
 bookStoreTitle.textContent = bookStore.name
+
+let books = bookStore.books
+
+const bookList = document.querySelector("#book-list")
+
+for(const object of books) {
+    let bookContainer = document.createElement("li")
+    let bookTitle = document.createElement("h3")
+    let bookAuthor = document.createElement("p")
+    let bookImage = document.createElement("img")
+
+    bookTitle.textContent = object.title
+    bookAuthor.textContent = object.author
+    bookImage.src = object.imageUrl
+
+    bookContainer.append(bookTitle)
+    bookContainer.append(bookAuthor)
+    bookContainer.append(bookImage)
+
+    bookList.append(bookContainer)
+}
+
